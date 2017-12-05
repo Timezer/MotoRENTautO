@@ -1,0 +1,91 @@
+<?php
+$title = 'Nous contacter';
+$this->headTitle($title);
+?>
+
+<?php
+$form = $this->form;
+$form->prepare();
+
+$form->get('email')->setAttributes([
+  'class'=>'form-control', 
+  'placeholder'=>'nom@exemple.com'
+  ]);
+  
+$form->get('subject')->setAttributes([
+  'class'=>'form-control', 
+  'placeholder'=>'Mettre votre sujet ici'
+  ]);
+  
+$form->get('body')->setAttributes([
+  'class'=>'form-control', 
+  'rows'=>6, 
+  'placeholder'=>'Mettre votre message ici'
+  ]);
+  
+$form->get('submit')->setAttributes(['class'=>'btn btn-primary']);
+?>
+
+<div id="title">
+    <h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+
+<div id="whycontact" style="text-align:center;">
+    <h3>Pourquoi nous contacter ?</h3>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-sm-4">
+        <li>Vous avez un problème avec votre location. Dans ce cas veuillez nous préciser la marque, le modèle ainsi que la date de location.</li>
+    </div>
+    
+    <div class="col-sm-4">
+        <li>Vous avez une suggestion à nous faire. Dans ce cas, que ce soit une critique positive ou négative, veuillez nous préciser celle-ci avec le plus de détails possibles.</li>
+    </div>
+    
+    <div class="col-sm-4">
+        <li>Vous voulez devenir un de nos partenaires! Alors n'hésitez pas une seule seconde, faites-nous parvenir votre RIB dan les plus brefs délais et nous vous recontacterons selon le montant.</li> 
+    </div>
+</div>
+
+<br>
+
+<div id="title">
+    <h3><span>Merci de remplir tous les champs ci-dessous</span></h3>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-md-6">
+        <?= $this->form()->openTag($form); ?>
+        
+        <div class="form-group">
+            <?= $this->formLabel($form->get('email')); ?>
+            <?= $this->formElement($form->get('email')); ?>
+            <?= $this->formElementErrors($form->get('email')); ?>
+        </div>
+        
+        <div class="form-group">
+            <?= $this->formLabel($form->get('subject')); ?>
+            <?= $this->formElement($form->get('subject')); ?>
+            <?= $this->formElementErrors($form->get('subject')); ?>
+        </div>
+        
+        <div class="form-group">
+            <?= $this->formLabel($form->get('body')); ?>
+            <?= $this->formElement($form->get('body')); ?>
+            <?= $this->formElementErrors($form->get('body')); ?>
+        </div>
+    
+        <?= $this->formElement($form->get('submit')); ?>
+        
+        <?= $this->form()->closeTag(); ?>
+  </div>    
+</div>
+
+<br>

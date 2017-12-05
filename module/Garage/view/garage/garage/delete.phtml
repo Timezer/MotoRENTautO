@@ -1,0 +1,26 @@
+<?php
+// module/Garage/view/garage/garage/delete.phtml:
+
+$title = 'Supprimer une voiture';
+$url   = $this->url('garage', ['action' => 'delete', 'id' => $id]);
+
+$this->headTitle($title);
+?>
+<div id=title>
+<h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+
+<p>
+    Etes-vous sûr de vouloir supprimer cette
+    <?= $this->escapeHtml($garage->marque) ?> <?= $this->escapeHtml($garage->modele) ?> ?
+</p>
+
+<form action="<?= $url ?>" method="post">
+<div class="form-group">
+    <input type="hidden" name="id" value="<?= (int) $garage->id ?>" />
+    <input type="submit" class="btn btn-danger" name="del" value="Oui" />
+    <input type="submit" class="btn btn-success" name="del" value="Non" />
+</div>
+</form>
+
+<br>

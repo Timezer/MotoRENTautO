@@ -1,0 +1,109 @@
+<?php
+// module/Garage/view/garage/garage/edit.phtml:
+
+$title = 'Editer une voiture';
+$this->headTitle($title);
+?>
+<div id=title>
+<h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+<?php
+// This provides a default CSS class and placeholder text for the marque element:
+$marque = $form->get('marque');
+$marque->setAttribute('class', 'form-control');
+$marque->setAttribute('placeholder', 'Marque de la voiture');
+// This provides a default CSS class and placeholder text for the modele element:
+$modele = $form->get('modele');
+$modele->setAttribute('class', 'form-control');
+$modele->setAttribute('placeholder', 'Modèle de la voiture');
+// This provides a default CSS class and placeholder text for the boite_de_vitesse element:
+$boite_de_vitesse = $form->get('boite_de_vitesse');
+$boite_de_vitesse->setAttribute('class', 'form-control');
+$boite_de_vitesse->setAttribute('placeholder', 'Manuelle ou Automatique');
+// This provides a default CSS class and placeholder text for the carburant element:
+$carburant = $form->get('carburant');
+$carburant->setAttribute('class', 'form-control');
+$carburant->setAttribute('placeholder', 'Essence, Diesel ou Hybride (essence ou diesel)');
+// This provides a default CSS class and placeholder text for the couleur element:
+$couleur = $form->get('couleur');
+$couleur->setAttribute('class', 'form-control');
+$couleur->setAttribute('placeholder', 'Couleur de la voiture');
+// This provides a default CSS class and placeholder text for the kilometre element:
+$kilometre = $form->get('kilometre');
+$kilometre->setAttribute('class', 'form-control');
+$kilometre->setAttribute('placeholder', 'Nombre de kilomètres de la voiture');
+// This provides a default CSS class and placeholder text for the anciennete element:
+$anciennete = $form->get('anciennete');
+$anciennete->setAttribute('class', 'form-control');
+$anciennete->setAttribute('placeholder', 'Âge de la voiture (en mois ou en années)');
+// This provides a default CSS class and placeholder text for the prix element:
+$prix = $form->get('prix');
+$prix->setAttribute('class', 'form-control');
+$prix->setAttribute('placeholder', 'Prix de la voiture par jour en €');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('garage', [
+    'action' => 'edit',
+    'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($marque) ?>
+    <?= $this->formElement($marque) ?>
+    <?= $this->formElementErrors()->render($marque, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($modele) ?>
+    <?= $this->formElement($modele) ?>
+    <?= $this->formElementErrors()->render($modele, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($boite_de_vitesse) ?>
+    <?= $this->formElement($boite_de_vitesse) ?>
+    <?= $this->formElementErrors()->render($boite_de_vitesse, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($carburant) ?>
+    <?= $this->formElement($carburant) ?>
+    <?= $this->formElementErrors()->render($carburant, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($couleur) ?>
+    <?= $this->formElement($couleur) ?>
+    <?= $this->formElementErrors()->render($couleur, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($kilometre) ?>
+    <?= $this->formElement($kilometre) ?>
+    <?= $this->formElementErrors()->render($kilometre, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($anciennete) ?>
+    <?= $this->formElement($anciennete) ?>
+    <?= $this->formElementErrors()->render($anciennete, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($prix) ?>
+    <?= $this->formElement($prix) ?>
+    <?= $this->formElementErrors()->render($prix, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+?>
+
+<br>

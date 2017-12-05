@@ -1,0 +1,49 @@
+<?php
+$title = 'Mes voitures';
+$this->headTitle($title);
+?>
+<div id=title>
+<h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+<p>
+    <a href="<?= $this->url('garage', ['action' => 'add']) ?>">Ajouter une nouvelle voiture</a>
+</p>
+
+<form  method="post" action="<?= $this->url('garage', ['action' => 'research']) ?>">
+    <p>Rechercher une voiture :
+    <input type="text" class="typeahead" title="Type here"/>
+    <input type="submit" class="btn btn-primary" name="del" value="Rechercher"/>
+    </p>
+</form>
+
+<div class="design" style="overflow-x: scroll;">
+<table class="table">
+<tr>
+    <th>Marque</th>
+    <th>Modèle</th>
+    <th>Boite de vitesse</th>
+    <th>Carburant</th>
+    <th>Couleur</th>
+    <th>Kilomètres</th>
+    <th>Ancienneté</th>
+    <th>Prix (€)</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($garages as $garage) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($garage->marque) ?></td>
+        <td><?= $this->escapeHtml($garage->modele) ?></td>
+        <td><?= $this->escapeHtml($garage->boite_de_vitesse) ?></td>
+        <td><?= $this->escapeHtml($garage->carburant) ?></td>
+        <td><?= $this->escapeHtml($garage->couleur) ?></td>
+        <td><?= $this->escapeHtml($garage->kilometre) ?></td>
+        <td><?= $this->escapeHtml($garage->anciennete) ?></td>
+        <td><?= $this->escapeHtml($garage->prix) ?></td>
+        <td>
+            <a href="<?= $this->url('garage', ['action' => 'edit', 'id' => $garage->id]) ?>">Editer</a>
+            <a href="<?= $this->url('garage', ['action' => 'delete', 'id' => $garage->id]) ?>">Supprimer</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
+</div>

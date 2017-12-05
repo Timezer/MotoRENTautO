@@ -1,0 +1,65 @@
+#corps{
+	margin-top:40px;
+}
+
+#pied{
+	background-color:#555;
+	color:white; 
+	padding:15px;
+	position:relative;
+	text-align:center;
+	width:100%;
+    display: block;
+}
+
+#title{
+    text-align:center;
+    background:linear-gradient(
+        #fff 0%,
+        #fff 45%,
+        #7c8d07 46%,
+        #7c8d07 54%,  
+        #fff 54%,
+        #fff 100%);
+    background:-webkit-linear-gradient(
+        #fff 0%,
+        #fff 45%,
+        #7c8d07 46%,
+        #7c8d07 54%,  
+        #fff 54%,
+        #fff 100%);
+    background:-moz-linear-gradient(
+        #fff 0%,
+        #fff 45%,
+        #7c8d07 46%,
+        #7c8d07 54%,  
+        #fff 54%,
+        #fff 100%);
+    background:-ms-linear-gradient(
+        #fff 0%,
+        #fff 45%,
+        #7c8d07 46%,
+        #7c8d07 54%,  
+        #fff 54%,
+        #fff 100%);
+    background:-o-linear-gradient(
+        #fff 0%,
+        #fff 45%,
+        #7c8d07 46%,
+        #7c8d07 54%,  
+        #fff 54%,
+        #fff 100%);
+}
+
+#title span{
+    background:#fff;
+    padding:0 20px;
+}
+
+#whycontact{
+     text-align:center;
+}
+
+#map{
+    text-align:center;
+}

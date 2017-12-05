@@ -1,0 +1,14 @@
+<?php
+$title = 'Erreur';
+$this->headTitle($title);
+?>
+
+<div id=title>
+<h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+
+<p>
+  <div class="alert alert-warning">
+    Désolé mais le mail n'a pas pu être envoyé. Veuillez remplir tous les champs ou vérifier votre connection internet.
+  </div>
+</p>

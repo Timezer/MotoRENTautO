@@ -1,0 +1,98 @@
+<?php
+$title = 'À propos';
+$this->headTitle($title);
+?>
+
+<div id=title>
+    <h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-9">
+        <h2>Description</h2>
+        <p>
+            Notre garage automobile vous propose un large choix d'automobiles, de différents modèles.
+            <br>
+            <br>
+            Le temps de la réparation de votre voiture ou de votre véhicule utilitaire, nous vous proposons le prêt d'un véhicule de remplacement.
+            <br>
+            <br>
+            Bénéficiez d'un contrat d'entretien, effectué par notre équipe de professionnels.
+        </p>
+    </div>
+    <div class="col-sm-3">
+        <br>
+        <br>
+        <a href="<?= $this->url('home') ?>"><img src="img/logo_final_grand.png" class="img-responsive" tile="Page principale"></a>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-sm-2">
+        <h2>Clientèle</h2>
+        <ul>
+            <li>Particuliers</li>
+            <li>Professionnels</li>
+        </ul>
+    
+        <h2>Marques</h2>
+        <ul>
+            <li>Multimarques</li>
+        </ul>
+    
+        <h2>Produits</h2>
+        <ul>
+            <li>Véhicules neufs</li>
+            <li>Véhicules d'occasions</li>
+        </ul>
+    </div>
+    
+    <div class="col-sm-8">
+        <br>
+        <img src="img/loueur_min.png" class="img-responsive" tile="MotoRENTautO"></a>
+    </div>
+    
+    <div class="col-sm-2">
+        <h2>Horaires</h2>
+        <ul>
+            <li>Lundi</li>
+    	    <ul>
+    	        <li>13:00 - 17:00</li>
+    	    </ul>
+            <li>Mardi</li>
+    	    <ul>
+    	        <li>08:00 - 12:00</li>
+    	        <li>13:00 - 17:00</li>
+        	</ul>
+            <li>Mercredi</li>
+    	    <ul>
+    	        <li>08:00 - 12:00</li>
+    	        <li>13:00 - 17:00</li>
+    	    </ul>
+            <li>Jeudi</li>
+    	    <ul>
+    	        <li>08:00 - 12:00</li>
+    	        <li>13:00 - 17:00</li>
+    	    </ul>
+            <li>Vendredi</li>
+    	    <ul>
+    	        <li>08:00 - 12:00</li>
+    	        <li>13:00 - 17:00</li>
+    	    </ul>
+            <li>Samedi</li>
+    	    <ul>
+    	        <li>08:00 - 12:00</li>
+    	    </ul>
+        </ul>
+    </div>
+</div>
+
+<br>
+
+<div class=row>
+    <div class="col-sm-12" id="map">
+        <h2>MotoRENTautO sur Google Maps</h2>
+        <a href="https://goo.gl/maps/ZPSF4wNJgRP2"><img src="img/maps.png" class="img-responsive" title="Adresse de MotoRENTautO"></a>
+    </div>
+</div>

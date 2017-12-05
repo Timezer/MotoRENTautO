@@ -1,0 +1,39 @@
+<?php
+$title = 'Rechercher une voiture';
+$this->headTitle($title);
+?>
+<div id=title>
+<h1><span><?= $this->escapeHtml($title) ?></span></h1>
+</div>
+
+<div class="design" style="overflow-x: scroll;">
+<table class="table">
+<tr>
+    <th>Marque</th>
+    <th>Modèle</th>
+    <th>Boite de vitesse</th>
+    <th>Carburant</th>
+    <th>Couleur</th>
+    <th>Kilomètres</th>
+    <th>Ancienneté</th>
+    <th>Prix (€)</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($garages as $garage) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($garage->marque) ?></td>
+        <td><?= $this->escapeHtml($garage->modele) ?></td>
+        <td><?= $this->escapeHtml($garage->boite_de_vitesse) ?></td>
+        <td><?= $this->escapeHtml($garage->carburant) ?></td>
+        <td><?= $this->escapeHtml($garage->couleur) ?></td>
+        <td><?= $this->escapeHtml($garage->kilometre) ?></td>
+        <td><?= $this->escapeHtml($garage->anciennete) ?></td>
+        <td><?= $this->escapeHtml($garage->prix) ?></td>
+        <td>
+            <a href="<?= $this->url('garage', ['action' => 'edit', 'id' => $garage->id]) ?>">Editer</a>
+            <a href="<?= $this->url('garage', ['action' => 'delete', 'id' => $garage->id]) ?>">Supprimer</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
+</div>
